@@ -2,15 +2,18 @@ from testrail import *
 import sys
 
 
+
+release = 'Web UI Service - 5.5.'+sys.argv[1]
+password = sys.argv[2]
 #Login with username and API Key
 client = APIClient('https://vic-qa-testrail.xmatters.com/testrail/')
 client.user = 'ygao'
-client.password = 'xmatters@2016'
+client.password = password
 
 
 
 # Input release number from command line
-release = 'Web UI Service - 5.5.'+sys.argv[1]
+
 print 'We will create regression test plan for milestone' + release
 
 
