@@ -39,7 +39,7 @@ print result['name'] + ' ' + str(testplanid)
 
 print 'step 3 -- Add regression testsuites to test plan'
 
-suites = [2774, 2804]
+suites = [2808, 2809]
 for suiteid in suites:
     result = client.send_post('add_plan_entry/'+str(testplanid),{'suite_id' : suiteid,'include_all' : True})
     print result['name']
