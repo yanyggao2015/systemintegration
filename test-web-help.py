@@ -10,6 +10,10 @@ import sys
 
 
 password = sys.argv[1]
+client = APIClient('https://vic-qa-testrail.xmatters.com/testrail/')
+client.user='ygao'
+client.password = password
+print password
 # Gui Map
 url = "https://test001.vortex.shared-dev.xmatters.com/xmatters/signOn.do"
 username = "test001"        
@@ -97,16 +101,13 @@ driver.switch_to_window(driver.window_handles[0])
 driver.close()
 
 
-client = APIClient('https://vic-qa-testrail.xmatters.com/testrail/')
-client.user='ygao'
-client.password = password
+
 
 print 'input test result to testrail'
 
 result = client.send_post('add_result_for_case/4228/260449',{ 'status_id': status_id, 'comment': comment1 +'\n' + comment2 })
 print (result)
 
-sleep(60)
 
 
 
